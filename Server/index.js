@@ -21,7 +21,7 @@ const app = express();
 
 // CORS Middleware
 app.use(cors({
-    origin: '*', 
+    origin:  'https://willowecommerceapp.vercel.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'], // authentication
 }));
