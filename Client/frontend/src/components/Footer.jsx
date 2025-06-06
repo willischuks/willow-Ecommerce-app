@@ -7,6 +7,7 @@ import {
     Footer,
     FooterBrand,
     FooterCopyright,
+    FooterDivider,
     FooterIcon,
     FooterLink,
     FooterLinkGroup,
@@ -134,6 +135,7 @@ export function FooterComponent() {
                 >
                     Admin Login
                 </Link>
+                <FooterDivider className="my-16" />
                 </div>
                 <div className="w-full sm:flex sm:items-center sm:justify-between text-xs">
                     <FooterCopyright href="#" by="Willow.™" year={2024} className="text-gray-500" />
