@@ -3,15 +3,15 @@ export default {
     content: [
         "./index.html",
         "./src/**/*.{js,ts,jsx,tsx}",
-        "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
-        "node_modules/flowbite/**/*.js",
+        "./node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+        "./node_modules/flowbite/**/*.js",
     ],
     theme: {
         extend: {
-        fontFamily: {
-            barlow: ['barlow', 'sans-serif'],
-            willow: ['cursive', 'ui-serif'],
-        },
+            fontFamily: {
+                barlow: ['barlow', 'sans-serif'],
+                willow: ['cursive', 'ui-serif'],
+            },
         },
     },
     darkMode: 'class',
@@ -20,4 +20,3 @@ export default {
         require('flowbite/plugin'),
     ],
 };
-
