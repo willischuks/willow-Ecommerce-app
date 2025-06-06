@@ -7,7 +7,6 @@ import {
     Footer,
     FooterBrand,
     FooterCopyright,
-    FooterDivider,
     FooterIcon,
     FooterLink,
     FooterLinkGroup,
@@ -91,8 +90,6 @@ export function FooterComponent() {
                             </HelperText>
                         </form>
                     </div>
-
-                    <FooterDivider className="my-8" />
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:col-span-2 lg:col-span-2">
                         {/* Company Links */}
                         <div>
@@ -138,8 +135,6 @@ export function FooterComponent() {
                     Admin Login
                 </Link>
                 </div>
-
-                <FooterDivider className="my-8" />
                 <div className="w-full sm:flex sm:items-center sm:justify-between text-xs">
                     <FooterCopyright href="#" by="Willow.™" year={2024} className="text-gray-500" />
                 </div>
