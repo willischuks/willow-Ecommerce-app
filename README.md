@@ -94,4 +94,4 @@ License
 This project is licensed under the WillowE - see the LICENSE file for details.
 
 Questions or Just Want to Chat?
-Feel free to open an issue in this repository if you have any questions, encounter bugs, or just want to discuss the project. We're excited to see this app grow!
+Feel free to open an issue in this repository if you have any questions, encounter bugs, or just want to discuss the project. We're excited to see this app grow!!!
