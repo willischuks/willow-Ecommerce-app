@@ -88,7 +88,7 @@ const AdminRegister= () => {
 
             if (response.ok) {
                 console.log('Registration successful:', data);
-                navigate ('/home');
+                navigate ('/admin');
                 setUserData({ email: '', password: '', password2: '', termsAccepted: false });
             } else {
                 setStatusMessage(data.msg || 'Registration failed. Please try again.');
