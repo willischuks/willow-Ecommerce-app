@@ -13,7 +13,7 @@ const ProductSingleCard = ({ product }) => {
     return (
         <Card className="max-w-sm flex flex-col justify-between h-full">
         <img
-            className="rounded-t-lg w-full object-cover h-40"  
+            className="rounded-t-lg w-full object-cover h-64"  
             src={product.imageUrl || 'https://via.placeholder.com/400x300?text=No+Image'}
             alt={product.name || 'Product Image'}
         />
