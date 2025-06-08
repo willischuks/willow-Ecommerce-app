@@ -28,8 +28,10 @@ const app = express();
 
 const allowedOrigins = [
     'https://willowecommerceapp.vercel.app',
-    ];
-
+    'https://willowecommerceapp-csbriz6n4-julezs-projects.vercel.app',
+    'https://willowecommerceapp-qbvvnu0d2-julezs-projects.vercel.app',
+    'http://localhost:3000',
+];
     app.use(cors({
     origin: function (origin, callback) {
         if (!origin || allowedOrigins.includes(origin)) {
@@ -48,7 +50,7 @@ app.use(express.json()); // Parse JSON bodies
 
 //  MongoDB connection
 mongoose
-    .connect(process.env.mongoDb)
+    .connect(process.env.mongoDb, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("Database is connected"))
     .catch((err) => console.error("Database connection error:", err));
 
