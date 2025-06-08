@@ -28,7 +28,6 @@ const app = express();
 
 const allowedOrigins = [
     'https://willowecommerceapp.vercel.app',
-    'https://willowecommerceapp-18bh83del-julezs-projects.vercel.app'
     ];
 
     app.use(cors({
