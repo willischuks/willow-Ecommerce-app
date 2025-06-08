@@ -9,7 +9,7 @@ import { v2 as cloudinary } from "cloudinary";
 import productRoute from "./routes/productRoute.js";
 import stripeRoute from "./routes/stripeRoute.js";
 import subscriberRoute from "./routes/subscriberRoute.js";
-import { authRouter } from "./controllers/authControllers.js"; // Corrected typo here
+import { authRouter } from "./controllers/authControllers.js"; 
 import customerRoute from "./routes/customerRoute.js";
 
 // ENV
