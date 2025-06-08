@@ -25,7 +25,7 @@ const Home = () => {
 
     const updateProductsPerSlide = () => {
         if (window.innerWidth >= 1280) { // xl screens
-            setProductsPerSlide(4);
+            setProductsPerSlide(3);
         } else if (window.innerWidth >= 1024) { // lg screens
             setProductsPerSlide(3);
         } else if (window.innerWidth >= 768) { // md screens
@@ -113,7 +113,7 @@ const Home = () => {
             </div>
         </div>
         </div>
-        
+
         {/* Latest Products Carousel Section */}
         <div className="max-w-[1200px] mx-auto py-8 px-4"> 
             <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white text-center">
