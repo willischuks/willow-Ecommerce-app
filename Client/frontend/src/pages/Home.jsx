@@ -70,7 +70,7 @@ const Home = () => {
 
     return (
         <div className="bg-gray-50 dark:bg-gray-900 min-h-screen">
-            {/* Hero Section */}
+            {/* Hero Section
             <div className="relative isolate px-4 py-8 sm:px-6 lg:px-8 bg-gradient-to-r from-teal-500 to-blue-600 dark:from-teal-700 dark:to-blue-800 text-white shadow-lg ">
                 <div className="absolute inset-x-0 -top-10 -z-10 transform-gpu overflow-hidden blur-xl sm:-top-20" aria-hidden="true">
                     <div className="relative left-[calc(50%-6rem)] aspect-[1155/678] w-[25rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-15rem)] sm:w-[50rem]" style={{
@@ -78,10 +78,10 @@ const Home = () => {
                     }} />
                 </div>
                 <div className="mx-auto max-w-lg py-8 sm:py-12 lg:py-16 text-center">
-                    <h1 className="text-2xl font-bold tracking-tight sm:text-4xl animate-fade-in-up">
+                    <h1 className="text-3xl font-bold tracking-tight sm:text-4xl animate-fade-in-up">
                         Welcome to <span className="text-yellow-300 dark:text-yellow-200">Willow.</span>
                     </h1>
-                    <p className="mt-3 text-xs leading-6 animate-fade-in delay-200 max-w-prose mx-auto">
+                    <p className="mt-3 text-sm leading-6 animate-fade-in delay-200 max-w-prose mx-auto">
                         At Willow, we're all about movie magic.
                         Whether you're hunting for that rare vintage poster or just want something cool for your wall, we've got you covered.
                         From all-time classics to today's biggest hits, we stock posters in every size and condition—brand new, gently used, framed, or rolled.
@@ -92,7 +92,7 @@ const Home = () => {
                         <Button href="/shop" className="bg-white text-blue-600 hover:bg-gray-100 focus:ring-blue-500 font-semibold px-4 py-1.5 text-sm rounded-lg shadow">
                             Shop All Products
                         </Button>
-                        <a href="/about" className="text-xs font-semibold leading-6 text-white hover:text-gray-200">
+                        <a href="/about" className="text-sm font-semibold leading-6 text-white hover:text-gray-200">
                             Learn more <span aria-hidden="true">→</span>
                         </a>
                     </div>
@@ -102,7 +102,51 @@ const Home = () => {
                         clipPath: 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
                     }} />
                 </div>
+            </div> */}
+            <div className="bg-gray-50 dark:bg-gray-900 min-h-screen">
+            {/* Hero Section */}
+            <div className="relative isolate px-6 py-16 sm:px-8 lg:px-12 bg-gradient-to-r from-teal-500 to-blue-600 dark:from-teal-700 dark:to-blue-800 text-white shadow-lg">
+                <div className="absolute inset-x-0 -top-10 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-20" aria-hidden="true">
+                <div
+                    className="relative left-1/2 aspect-[1155/678] w-[30rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:w-[60rem]"
+                    style={{
+                    clipPath:
+                        'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                    }}
+                />
+                </div>
+                <div className="mx-auto max-w-4xl text-center py-14 sm:py-20">
+                <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight animate-fade-in-up">
+                    Welcome to <span className="text-yellow-300 dark:text-yellow-200">Willow.</span>
+                </h1>
+                <p className="mt-5 text-base sm:text-lg leading-7 animate-fade-in delay-200 max-w-3xl mx-auto">
+                    At Willow, we're all about movie magic.
+                    Whether you're hunting for that rare vintage poster or just want something cool for your wall, we've got you covered.
+                    From all-time classics to today's biggest hits, we stock posters in every size and condition—brand new, gently used, framed, or rolled.
+                    It's more than just decoration—it's a way to relive your favorite moments, scenes, and stories.
+                    Willow is where movie lovers find their perfect piece of the big screen.
+                </p>
+                <div className="mt-8 flex justify-center gap-x-4 animate-fade-in-up delay-400">
+                    <Button href="/shop" className="bg-white text-blue-600 hover:bg-gray-100 focus:ring-blue-500 font-semibold px-5 py-2 text-base rounded-lg shadow">
+                    Shop All Products
+                    </Button>
+                    <a href="/about" className="text-base font-semibold leading-6 text-white hover:text-gray-200">
+                    Learn more →
+                    </a>
+                </div>
+                </div>
+                <div className="absolute inset-x-0 top-[calc(100%-8rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-20rem)]" aria-hidden="true">
+                <div
+                    className="relative left-1/2 aspect-[1155/678] w-[30rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:w-[60rem]"
+                    style={{
+                    clipPath:
+                        'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                    }}
+                />
+                </div>
             </div>
+            </div>
+
 
             {/* Latest Products Carousel Section */}
             <div className="max-w-[1200px] mx-auto py-8 px-4"> 
