@@ -144,28 +144,128 @@ export function FooterComponent() {
         // </Footer>
 
 
-        <Footer container className="bg-gray-900 dark:bg-gray-950 text-gray-400 py-10">
-            <div className="w-full max-w-screen-md mx-auto px-4 flex flex-col gap-10">
+        // <Footer container className="bg-gray-900 dark:bg-gray-950 text-gray-400 py-10">
+        //     <div className="w-full max-w-screen-md mx-auto px-4 flex flex-col gap-10">
                 
-                {/* Brand & Tagline */}
-                <div className="flex flex-col items-start">
-                <FooterBrand
+        //         {/* Brand & Tagline */}
+        //         <div className="flex flex-col items-start">
+        //         <FooterBrand
+        //             href="/"
+        //             src="https://flowbite.com/docs/images/logo.svg"
+        //             alt="Willow Logo"
+        //             name=""
+        //         >
+        //             <span className="self-center text-xl font-extrabold text-white">Willow.</span>
+        //         </FooterBrand>
+        //         <p className="text-sm mt-2">Providing reliable tech since 2024</p>
+        //         </div>
+
+        //         {/* Newsletter Form */}
+        //         <div>
+        //         <FooterTitle title="Stay in the loop" className="text-white" />
+        //         <form onSubmit={handleSubscribe} className="flex flex-col gap-2 mt-2">
+        //             <div>
+        //             <Label htmlFor="email-newsletter" value="Your email" className="sr-only" />
+        //             <TextInput
+        //                 id="email-newsletter"
+        //                 type="email"
+        //                 placeholder="Enter your email"
+        //                 value={email}
+        //                 onChange={(e) => setEmail(e.target.value)}
+        //                 required
+        //                 sizing="sm"
+        //                 className="w-full"
+        //             />
+        //             </div>
+        //             <Button
+        //             type="submit"
+        //             size="sm"
+        //             className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+        //             >
+        //             Subscribe
+        //             </Button>
+        //             <HelperText className="text-xs">
+        //             By subscribing, you agree to our{' '}
+        //             <a href="#" className="font-medium text-blue-500 hover:underline">
+        //                 Privacy Policy
+        //             </a>.
+        //             </HelperText>
+        //         </form>
+        //         </div>
+
+        //         {/* Company Links */}
+        //         <div>
+        //         <FooterTitle title="Company" className="text-white" />
+        //         <FooterLinkGroup col className="text-xs mt-1 font-light">
+        //             <FooterLink href="#">About Us</FooterLink>
+        //             <FooterLink href="#">Careers</FooterLink>
+        //             <FooterLink href="#">Blog</FooterLink>
+        //         </FooterLinkGroup>
+        //         </div>
+
+        //         {/* Follow Us */}
+        //         <div>
+        //         <FooterTitle title="Follow us" className="text-white" />
+        //         <FooterLinkGroup col className="text-xs mt-1">
+        //             <FooterLink href="#" className="flex items-center space-x-2">
+        //             <FooterIcon icon={BsInstagram} className="text-gray-400 hover:text-pink-500 text-lg" />
+        //             </FooterLink>
+        //             <FooterLink href="#" className="flex items-center space-x-2">
+        //             <FooterIcon icon={BsGithub} className="text-gray-400 hover:text-gray-300 text-xs" />
+        //             </FooterLink>
+        //             <FooterLink href="#" className="flex items-center space-x-2">
+        //             <FooterIcon icon={BsLinkedin} className="text-gray-400 hover:text-blue-600 text-lg" />
+        //             </FooterLink>
+        //         </FooterLinkGroup>
+        //         </div>
+
+        //         {/* Legal Links */}
+        //         <div>
+        //         <FooterTitle title="Legal" className="text-white" />
+        //         <FooterLinkGroup col className="text-xs mt-1 font-light">
+        //             <FooterLink href="#">Privacy Policy</FooterLink>
+        //             <FooterLink href="#">Terms &amp; Conditions</FooterLink>
+        //         </FooterLinkGroup>
+        //         </div>
+
+        //         {/* Admin Login */}
+        //         <div>
+        //         <Link
+        //             to="/admin-login"
+        //             onClick={handleAdminLoginClick}
+        //             className="text-gray-400 hover:text-blue-500 text-xs font-light"
+        //         >
+        //             Admin Login
+        //         </Link>
+        //         </div>
+
+        //         <FooterDivider className="my-8" />
+        //         <div className="text-center text-xs text-gray-500">
+        //         <FooterCopyright href="#" by="Willow.™" year={2024} />
+        //         </div>
+        //     </div>
+        //     </Footer>
+
+        <Footer container className="bg-gray-900 dark:bg-gray-950 text-gray-400 py-10">
+            <div className="w-full max-w-screen-xl mx-auto px-4">
+                <div className="flex flex-wrap justify-between gap-8">
+
+                {/* Logo & Tagline */}
+                <div className="min-w-[180px] max-w-xs flex flex-col">
+                    <FooterBrand
                     href="/"
                     src="https://flowbite.com/docs/images/logo.svg"
                     alt="Willow Logo"
-                    name=""
-                >
+                    >
                     <span className="self-center text-xl font-extrabold text-white">Willow.</span>
-                </FooterBrand>
-                <p className="text-sm mt-2">Providing reliable tech since 2024</p>
+                    </FooterBrand>
+                    <p className="text-sm mt-2">Providing reliable tech since 2024</p>
                 </div>
 
-                {/* Newsletter Form */}
-                <div>
-                <FooterTitle title="Stay in the loop" className="text-white" />
-                <form onSubmit={handleSubscribe} className="flex flex-col gap-2 mt-2">
-                    <div>
-                    <Label htmlFor="email-newsletter" value="Your email" className="sr-only" />
+                {/* Newsletter */}
+                <div className="min-w-[200px] max-w-xs">
+                    <FooterTitle title="Stay in the loop" className="text-white" />
+                    <form onSubmit={handleSubscribe} className="flex flex-col gap-2 mt-2">
                     <TextInput
                         id="email-newsletter"
                         type="email"
@@ -176,75 +276,60 @@ export function FooterComponent() {
                         sizing="sm"
                         className="w-full"
                     />
-                    </div>
-                    <Button
-                    type="submit"
-                    size="sm"
-                    className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
-                    >
-                    Subscribe
+                    <Button type="submit" size="sm" className="w-full bg-blue-600 hover:bg-blue-700">
+                        Subscribe
                     </Button>
                     <HelperText className="text-xs">
-                    By subscribing, you agree to our{' '}
-                    <a href="#" className="font-medium text-blue-500 hover:underline">
-                        Privacy Policy
-                    </a>.
+                        By subscribing, you agree to our{' '}
+                        <a href="#" className="font-medium text-blue-500 hover:underline">Privacy Policy</a>.
                     </HelperText>
-                </form>
+                    </form>
                 </div>
 
-                {/* Company Links */}
-                <div>
-                <FooterTitle title="Company" className="text-white" />
-                <FooterLinkGroup col className="text-xs mt-1 font-light">
+                {/* Company */}
+                <div className="min-w-[120px]">
+                    <FooterTitle title="Company" className="text-white" />
+                    <FooterLinkGroup col className="text-xs mt-1 font-light">
                     <FooterLink href="#">About Us</FooterLink>
                     <FooterLink href="#">Careers</FooterLink>
                     <FooterLink href="#">Blog</FooterLink>
-                </FooterLinkGroup>
+                    </FooterLinkGroup>
                 </div>
 
                 {/* Follow Us */}
-                <div>
-                <FooterTitle title="Follow us" className="text-white" />
-                <FooterLinkGroup col className="text-xs mt-1">
-                    <FooterLink href="#" className="flex items-center space-x-2">
-                    <FooterIcon icon={BsInstagram} className="text-gray-400 hover:text-pink-500 text-lg" />
-                    </FooterLink>
-                    <FooterLink href="#" className="flex items-center space-x-2">
-                    <FooterIcon icon={BsGithub} className="text-gray-400 hover:text-gray-300 text-xs" />
-                    </FooterLink>
-                    <FooterLink href="#" className="flex items-center space-x-2">
-                    <FooterIcon icon={BsLinkedin} className="text-gray-400 hover:text-blue-600 text-lg" />
-                    </FooterLink>
-                </FooterLinkGroup>
+                <div className="min-w-[120px]">
+                    <FooterTitle title="Follow us" className="text-white" />
+                    <FooterLinkGroup col className="text-xs mt-1">
+                    <FooterLink href="#"><FooterIcon icon={BsInstagram} /></FooterLink>
+                    <FooterLink href="#"><FooterIcon icon={BsGithub} /></FooterLink>
+                    <FooterLink href="#"><FooterIcon icon={BsLinkedin} /></FooterLink>
+                    </FooterLinkGroup>
                 </div>
 
-                {/* Legal Links */}
-                <div>
-                <FooterTitle title="Legal" className="text-white" />
-                <FooterLinkGroup col className="text-xs mt-1 font-light">
+                {/* Legal */}
+                <div className="min-w-[120px]">
+                    <FooterTitle title="Legal" className="text-white" />
+                    <FooterLinkGroup col className="text-xs mt-1 font-light">
                     <FooterLink href="#">Privacy Policy</FooterLink>
-                    <FooterLink href="#">Terms &amp; Conditions</FooterLink>
-                </FooterLinkGroup>
+                    <FooterLink href="#">Terms & Conditions</FooterLink>
+                    </FooterLinkGroup>
+                </div>
                 </div>
 
-                {/* Admin Login */}
-                <div>
+                {/* Admin + Copyright */}
+                <div className="mt-8 text-xs text-gray-500 flex flex-col sm:flex-row sm:justify-between items-center">
                 <Link
                     to="/admin-login"
                     onClick={handleAdminLoginClick}
-                    className="text-gray-400 hover:text-blue-500 text-xs font-light"
+                    className="text-gray-400 hover:text-blue-500 font-light mb-2 sm:mb-0"
                 >
                     Admin Login
                 </Link>
-                </div>
-
-                <FooterDivider className="my-8" />
-                <div className="text-center text-xs text-gray-500">
                 <FooterCopyright href="#" by="Willow.™" year={2024} />
                 </div>
             </div>
-            </Footer>
+        </Footer>
+
 
     );
 }
