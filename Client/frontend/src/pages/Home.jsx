@@ -113,14 +113,12 @@ const Home = () => {
             </div>
         </div>
         </div>
-
-
+        
         {/* Latest Products Carousel Section */}
         <div className="max-w-[1200px] mx-auto py-8 px-4"> 
             <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white text-center">
                 Latest Products
             </h2>
-
             {loading ? (
                 <div className="flex justify-center items-center h-64">
                     <Spinner size="xl" />
