@@ -20,11 +20,30 @@ const { CloudinaryStorage } = pkg;
 const app = express();
 
 // CORS Middleware
-app.use(cors({
-    origin:  'https://willowecommerceapp.vercel.app',
+// app.use(cors({
+//     origin:  'https://willowecommerceapp.vercel.app',
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     allowedHeaders: ['Content-Type', 'Authorization'], // authentication
+// }));
+
+const allowedOrigins = [
+    'https://willowecommerceapp.vercel.app',
+    'https://willowecommerceapp-18bh83del-julezs-projects.vercel.app'
+    ];
+
+    app.use(cors({
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+        } else {
+        callback(new Error('Not allowed by CORS: ' + origin));
+        }
+    },
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'], // authentication
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
 }));
+
 
 app.use(express.json()); // Parse JSON bodies
 
