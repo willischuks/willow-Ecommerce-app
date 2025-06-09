@@ -28,7 +28,7 @@ export function FooterComponent() {
         const handleAdminLoginClick = (e) => {
             e.preventDefault(); 
             console.log("Admin Login button clicked (useNavigate test)");
-            navigate('/admin'); // navigate to the admin page
+            navigate('/admin-login'); // navigate to the admin page
         };
 
         const handleSubscribe = async (e) => {
