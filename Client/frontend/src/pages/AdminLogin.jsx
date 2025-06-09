@@ -55,6 +55,7 @@ const AdminLogin = () => {
         setStatusMessage(''); 
         setIsLoading(true); 
         try {
+            console.log('Sending login data:', loginData); 
             const response = await axios.post(
                 `${SERVER_BASE_URL}/auth/login`, 
                 loginData
