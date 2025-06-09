@@ -24,11 +24,11 @@ export function FooterComponent() {
     const { enqueueSnackbar } = useSnackbar();
     const navigate = useNavigate();
 
-        // New function to handle navigation
+        // Function to handle admin login click
         const handleAdminLoginClick = (e) => {
-            e.preventDefault(); // Prevent default if FooterLink still renders an <a>
+            e.preventDefault(); 
             console.log("Admin Login button clicked (useNavigate test)");
-            navigate('/login'); // Programmatically navigate to /login
+            navigate('/admin'); // navigate to the admin page
         };
 
         const handleSubscribe = async (e) => {
