@@ -81,18 +81,18 @@ const Cart = () => {
                 <h2 className='text-3xl font-extrabold text-gray-900 dark:text-white mb-8 text-center'>Your Shopping Cart</h2>
                 <div className='grid grid-cols-1 gap-4'> 
                     {cartItems.map((item) => (
-                        <Card key={item._id} className='flex-col sm:flex-row items-center p-3 bg-white dark:bg-gray-800 shadow-md rounded-lg'> 
+                        <Card key={item._id} className='flex flex-col sm:flex-row items-center sm:items-start bg-white dark:bg-gray-800 rounded-lg shadow-md p-4'> 
                             <img
                                 src={item.imageUrl || 'https://via.placeholder.com/100'}
                                 alt={item.name}
-                                className='w-28 h-28 sm:w-24 sm:h-24 object-cover rounded-md mb-3 sm:mb-0 sm:mr-4' 
+                                className='w-60 h-32 object-cover rounded-lg mb-4 sm:mb-0 sm:mr-6' 
                             />
-                            <div className='flex flex-col justify-between flex-grow w-full sm:w-auto text-center sm:text-left'>
+                            <div className='flex flex-col flex-grow text-center sm:text-left w-full'>
                                 <div>
-                                    <h3 className='text-lg font-bold text-gray-900 dark:text-white mb-1'>{item.name}</h3> 
-                                    <p className='text-md text-gray-700 dark:text-gray-300'>Price: <span className="font-semibold">${(item.priceInCents / 100).toFixed(2)}</span></p> 
+                                    <h3 className='text-xl font-bold text-gray-900 dark:text-white'>{item.name}</h3> 
+                                    <p className='text-gray-700 dark:text-gray-300 mt-1'>Price: <span className="font-semibold">${(item.priceInCents / 100).toFixed(2)}</span></p> 
                                 </div>
-                                <div className='flex items-center justify-center sm:justify-start mt-3 space-x-3'> 
+                                <div className='flex justify-center sm:justify-start items-center gap-2 mt-4'> 
                                     <p className='text-md font-medium text-gray-900 dark:text-white mr-2'>Qty:</p>
                                     <Button
                                         color="light"
