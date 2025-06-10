@@ -48,19 +48,19 @@ router.post('/login', async (req, res) => {
         if (isMatch) {
             const payload = {
                 id: user._id,
-                email: user.email
+                email: user.email,
+                role: user.role 
             };
-
+            // Create JWT token
             jwt.sign(
                 payload,
                 process.env.JWT_SECRET,
                 { expiresIn: '1h' },
                 (error, token) => {
                     if (error) throw error;
-
                     res.json({
                         token,
-                        user: { id: user._id, email: user.email }
+                        user: { id: user._id, email: user.email, role: user.role } 
                     });
                 }
             );

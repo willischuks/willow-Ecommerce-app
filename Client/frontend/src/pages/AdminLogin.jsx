@@ -2,6 +2,7 @@
 "use client"; 
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import axios from "axios"; 
 import {
     TextInput,
@@ -36,6 +37,7 @@ const SERVER_BASE_URL = import.meta.env.VITE_REACT_APP_SERVER_BASE_URL;
 
 const AdminLogin = () => {
     const navigate = useNavigate();
+    const { login } = useAuth();
 
     const [loginData, setLoginData] = useState({
         email: '',
@@ -50,41 +52,73 @@ const AdminLogin = () => {
         if (statusMessage) setStatusMessage('');
     };
 
+    // const submitHandler = async (e) => {
+    //     e.preventDefault();
+    //     setStatusMessage(''); 
+    //     setIsLoading(true); 
+    //     try {
+    //         console.log('Sending login data:', loginData); 
+    //         const response = await axios.post(
+    //             `${SERVER_BASE_URL}/auth/login`, 
+    //             loginData
+    //         );
+
+    //         console.log(response.data);
+    //         localStorage.setItem('token', response.data.token);
+
+    //         navigate('/admin'); 
+    //         setLoginData({ email: '', password: '' }); 
+
+    //     } catch (error) {
+    //         console.error('Login error:', error);
+
+    //         if (error.response) {
+                
+    //             setStatusMessage(error.response.data.msg || 'Login failed. Please check your credentials.');
+    //         } else if (error.request) {
+                
+    //             setStatusMessage('Network error: Could not connect to the server. Please check your internet connection.');
+    //         } else {
+                
+    //             setStatusMessage('An unexpected error occurred. Please try again.');
+    //         }
+    //     } finally {
+    //         setIsLoading(false); 
+    //     }
+    // };
     const submitHandler = async (e) => {
         e.preventDefault();
-        setStatusMessage(''); 
-        setIsLoading(true); 
+        setStatusMessage('');
+        setIsLoading(true);
         try {
-            console.log('Sending login data:', loginData); 
+            console.log('Sending login data:', loginData);
             const response = await axios.post(
-                `${SERVER_BASE_URL}/auth/login`, 
+                `${SERVER_BASE_URL}/auth/login`,
                 loginData
             );
 
             console.log(response.data);
-            localStorage.setItem('token', response.data.token);
+            // localStorage.setItem('token', response.data.token); // <-- REMOVE THIS LINE
 
-            navigate('/admin'); 
-            setLoginData({ email: '', password: '' }); 
+            login(response.data.token); // <--- ADD THIS LINE: Use the AuthContext's login function
+
+            navigate('/admin');
+            setLoginData({ email: '', password: '' });
 
         } catch (error) {
             console.error('Login error:', error);
 
             if (error.response) {
-                
                 setStatusMessage(error.response.data.msg || 'Login failed. Please check your credentials.');
             } else if (error.request) {
-                
                 setStatusMessage('Network error: Could not connect to the server. Please check your internet connection.');
             } else {
-                
                 setStatusMessage('An unexpected error occurred. Please try again.');
             }
         } finally {
-            setIsLoading(false); 
+            setIsLoading(false);
         }
     };
-
     return (
         <div className='flex flex-col items-center justify-center min-h-screen bg-gray-50 dark:bg-gray-900 p-4'>
             <h2 className='font-medium mb-4 text-gray-900 dark:text-white text-sm mt-16'>Admin Log In</h2>

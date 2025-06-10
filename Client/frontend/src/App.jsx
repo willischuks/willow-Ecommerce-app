@@ -15,11 +15,13 @@ import Cart from './pages/Cart';
 import SuccessPage from './pages/Success';
 import CancelPage from './pages/Cancel';
 import Shop from './pages/Shop';
-import FooterComponent from './components/Footer'; 
+import FooterComponent from './components/Footer';
+import { AuthProvider } from './context/AuthContext';
 import AdminLogin  from './pages/AdminLogin';
 import AdminRegister from './pages/AdminRegister';
 import AdminNavbar from './components/AdminNavBar';
 import ScrollToTop from './components/ScrollToTop'; 
+
 
 
 function App (){
@@ -28,31 +30,32 @@ function App (){
 
     return(
         <>
-            <ScrollToTop />
-            {isAdminRoute ? <AdminNavbar /> : <Navbar />}
-            <Routes>
-                <Route path = "/" element={<Home/>} />
-                <Route path = "/home" element={<Home/>} />
-                <Route path = "/login" element={<CustomerLogin/>} />
-                <Route path = "/register" element={<CustomerRegister/>} />
-                <Route path = "/shop" element={<Shop/>} />
-                <Route path = "/admin-login" element={<AdminLogin />} />
-                <Route path = "/admin-register" element={<AdminRegister/>} />
-                <Route path = "/search" element={<SearchPage/>} />
-                <Route path='/cart' element ={<Cart/>}/> 
-                <Route path='/success' element={<SuccessPage/>}/>
-                <Route path='/cancel' element={<CancelPage/>}/>
-                <Route
-                    path="/admin/*"
-                    element={
-                        <ProtectedRoute>
-                            <AdminRoutes />
-                        </ProtectedRoute>
-                    }
-                />
-            </Routes>
-            
-            {!isAdminRoute && <FooterComponent/>} 
+            <AuthProvider>
+                <ScrollToTop />
+                {isAdminRoute ? <AdminNavbar /> : <Navbar />}
+                    <Routes>
+                        <Route path = "/" element={<Home/>} />
+                        <Route path = "/home" element={<Home/>} />
+                        <Route path = "/login" element={<CustomerLogin/>} />
+                        <Route path = "/register" element={<CustomerRegister/>} />
+                        <Route path = "/shop" element={<Shop/>} />
+                        <Route path = "/admin-login" element={<AdminLogin />} />
+                        <Route path = "/admin-register" element={<AdminRegister/>} />
+                        <Route path = "/search" element={<SearchPage/>} />
+                        <Route path='/cart' element ={<Cart/>}/> 
+                        <Route path='/success' element={<SuccessPage/>}/>
+                        <Route path='/cancel' element={<CancelPage/>}/>
+                        <Route
+                            path="/admin/*"
+                            element={
+                                <ProtectedRoute>
+                                    <AdminRoutes />
+                                </ProtectedRoute>
+                            }
+                        />
+                    </Routes>
+                {!isAdminRoute && <FooterComponent/>}
+            </AuthProvider> 
         </>
     )
 };
