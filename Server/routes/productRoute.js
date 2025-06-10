@@ -15,7 +15,7 @@ router.post("/", auth, async (req, res) => {
             movieTitle, releaseYear, director, actors, posterSize, condition,
         } = req.body;
 
-        if (!name || !priceInCents || !imageUrl || !category || !movieTitle || !releaseYear || !director || !actors || !posterSize || !condition) {
+        if (!name || !priceInCents || !imageUrl || !category || !movieTitle ||!director) {
             console.error("Missing required product fields:", req.body);
             return res.status(400).json({ message: "Missing required product fields" });
         }
