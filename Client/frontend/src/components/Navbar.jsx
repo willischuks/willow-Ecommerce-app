@@ -123,7 +123,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Button } from 'flowbite-react'; 
 import CartIcon from './CartIcon'; 
-import { useAuth } from '../contexts/AuthContext'; // <-- Import useAuth
+import { useAuth } from '../context/AuthContext';
 
 const Navbar = () => {
     const [searchTerm, setSearchTerm] = useState('');
