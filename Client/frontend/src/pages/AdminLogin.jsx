@@ -52,40 +52,6 @@ const AdminLogin = () => {
         if (statusMessage) setStatusMessage('');
     };
 
-    // const submitHandler = async (e) => {
-    //     e.preventDefault();
-    //     setStatusMessage(''); 
-    //     setIsLoading(true); 
-    //     try {
-    //         console.log('Sending login data:', loginData); 
-    //         const response = await axios.post(
-    //             `${SERVER_BASE_URL}/auth/login`, 
-    //             loginData
-    //         );
-
-    //         console.log(response.data);
-    //         localStorage.setItem('token', response.data.token);
-
-    //         navigate('/admin'); 
-    //         setLoginData({ email: '', password: '' }); 
-
-    //     } catch (error) {
-    //         console.error('Login error:', error);
-
-    //         if (error.response) {
-                
-    //             setStatusMessage(error.response.data.msg || 'Login failed. Please check your credentials.');
-    //         } else if (error.request) {
-                
-    //             setStatusMessage('Network error: Could not connect to the server. Please check your internet connection.');
-    //         } else {
-                
-    //             setStatusMessage('An unexpected error occurred. Please try again.');
-    //         }
-    //     } finally {
-    //         setIsLoading(false); 
-    //     }
-    // };
     const submitHandler = async (e) => {
         e.preventDefault();
         setStatusMessage('');
@@ -98,9 +64,7 @@ const AdminLogin = () => {
             );
 
             console.log(response.data);
-            // localStorage.setItem('token', response.data.token); // <-- REMOVE THIS LINE
-
-            login(response.data.token); // <--- ADD THIS LINE: Use the AuthContext's login function
+            login(response.data.token);
 
             navigate('/admin');
             setLoginData({ email: '', password: '' });

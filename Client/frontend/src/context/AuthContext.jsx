@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
     const [user, setUser] = useState(null); 
-    const [isLoadingAuth, setIsLoadingAuth] = useState(true); // provides a loading state while checking auth status
+    const [isLoadingAuth, setIsLoadingAuth] = useState(true); // provide loading state
 
     // Function to check authentication status
     const checkAuthStatus = useCallback(() => {

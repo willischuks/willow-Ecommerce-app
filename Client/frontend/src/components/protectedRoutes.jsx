@@ -4,29 +4,13 @@ import {Navigate, useLocation} from "react-router-dom";
 import {useAuth} from "../context/AuthContext";
 
 
-// const isAuthenticated = () => {
-//     return !!localStorage.getItem("token") ;
-//     // return true; 
-// };
-
-
-// const ProtectedRoute = ({ children }) => {
-//     if (!isAuthenticated()) {
-//         return <Navigate to="/admin-login" replace/>;
-//     } 
-//     return children;
-// };
-
-// export default ProtectedRoute;
-
 const ProtectedRoute = ({ children }) => {
     const { isAuthenticated, isAdmin, isLoadingAuth } = useAuth(); // Get state from context
     const location = useLocation();
-
-    
-    if (isLoadingAuth) {
-        return <div>Loading authentication...</div>; // Or a spinner/loading screen
-    }
+        
+        if (isLoadingAuth) {
+            return <div>Loading authentication...</div>; // Or a spinner/loading screen
+        }
 
     const isAttemptingAdminRoute = location.pathname.startsWith('/admin');
 
